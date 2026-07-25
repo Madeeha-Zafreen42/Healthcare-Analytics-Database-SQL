@@ -22,3 +22,53 @@ The Healthcare Analytics database consists of six interconnected tables represen
 | HealthcareProfessionals | Stores information about healthcare providers and their specialisations. |
 | MedicationsPrescribed | Tracks medications prescribed to patients during treatment. |
 | Transactions | Records billing, payment methods, and transaction details. |
+
+## Database Schema
+
+The Entity Relationship (ER) Diagram below illustrates the structure of the Healthcare Analytics database, including the relationships between tables, primary keys (PK), and foreign keys (FK). It provides a visual representation of the relational database design used throughout this project.
+
+![ER Diagram](Images/Database_Schema.png)
+
+## Project Workflow
+
+The project follows a structured workflow, beginning with database design and ending with analytical insights generated through SQL queries.
+
+Database Design  
+↓  
+Table Creation  
+↓  
+Data Insertion  
+↓  
+SQL Query Execution  
+↓  
+Data Analysis  
+↓  
+Key Findings
+
+## SQL Concepts Used
+
+This project demonstrates the practical application of fundamental and intermediate SQL concepts for querying and analysing relational healthcare data.
+
+- SELECT
+- WHERE
+- ORDER BY
+- GROUP BY
+- Aggregate Functions
+- INNER JOIN
+- LEFT JOIN
+- Subqueries
+- Common Table Expressions (CTEs)
+- Window Functions
+
+## Key Findings
+
+The SQL analysis provided insights into multiple aspects of healthcare operations, including:
+
+- Identified patient appointment trends across different departments.
+- Analysed healthcare professional activity and appointment distribution.
+- Examined medication prescription patterns.
+- Evaluated revenue generated through healthcare transactions.
+- Retrieved patient medical records for treatment analysis.
+- Applied SQL joins, aggregations, subqueries, CTEs, and window functions to answer analytical business questions.
+
+> **Note:** The complete SQL queries and outputs are available in the `Healthcare_Analytics_Database.sql` file.
