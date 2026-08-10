@@ -1,0 +1,50 @@
+# Top Services Revenue Analysis
+
+## Objective
+
+Identify the top three services generating the highest total charges for each patient.
+
+## SQL Query
+
+```sql
+-- Can we identify our top 3 most expensive services for each patient?
+
+WITH EXPENSIVE_SERVICES AS (
+    SELECT 
+        T.SERVICEPROVIDED,
+        P.NAME,
+        SUM(T.AMOUNTCHARGED) AS TOTAL_REVENUE
+    FROM TRANSACTIONS T
+    JOIN PATIENTRECORDS P 
+        ON T.PatientID = P.PatientID
+    GROUP BY T.SERVICEPROVIDED, P.NAME
+),
+
+TOP_SERVICES AS (
+    SELECT 
+        SERVICEPROVIDED,
+        NAME,
+        TOTAL_REVENUE,
+        DENSE_RANK() OVER (
+            PARTITION BY NAME 
+            ORDER BY TOTAL_REVENUE DESC
+        ) AS RANKING
+    FROM EXPENSIVE_SERVICES
+)
+
+SELECT 
+    SERVICEPROVIDED,
+    NAME,
+    TOTAL_REVENUE,
+    RANKING
+FROM TOP_SERVICES
+WHERE RANKING <= 3;
+```
+
+## Output
+
+![Top Services Revenue Analysis](../Images/top_services.png)
+
+## Insight
+
+Emergency Services generated the highest total charge among the services shown, with $300 recorded for both Jane Smith and Jessica Wilson. Other high-value services included the Kidney Function Lab Test for Olivia Martin at $170 and the Cholesterol Lab Test for Robert Thomas at $180. The results also show that several patients had fewer than three distinct services recorded in the dataset.
