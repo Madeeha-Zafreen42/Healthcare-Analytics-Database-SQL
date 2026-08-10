@@ -62,13 +62,12 @@ This project demonstrates the practical application of fundamental and intermedi
 
 ## Key Findings
 
-The SQL analysis provided insights into multiple aspects of healthcare operations, including:
+The SQL analysis provided insights into several aspects of healthcare operations, including:
 
-- Identified patient appointment trends across different departments.
-- Analysed healthcare professional activity and appointment distribution.
-- Examined medication prescription patterns.
-- Evaluated revenue generated through healthcare transactions.
-- Retrieved patient medical records for treatment analysis.
-- Applied SQL joins, aggregations, subqueries, CTEs, and window functions to answer analytical business questions.
+- Compared individual patient appointment frequency with the clinic average.
+- Identified the most commonly prescribed medication for each diabetes type represented in the dataset.
+- Analysed month-to-month changes in appointment volume.
+- Identified the highest-charge services for individual patients.
+- Applied SQL joins, aggregations, CTEs, and window functions to answer analytical questions.
 
 > **Note:** The complete SQL queries and outputs are available in the `Healthcare_Analytics_Database.sql` file.
